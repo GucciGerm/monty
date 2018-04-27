@@ -37,13 +37,13 @@ int tokenize(char *input, operation_t **operation)
 		argument = strtok(NULL, deliminators);
 		if (argument == NULL)
 		{
-			printf("L%d: usage: push integer\n",
+			printf("1:L%d: usage: push integer\n",
 			       inputeval);
 			exit(EXIT_FAILURE);
 		}
 		if (checkdigit(argument) != 1)
 		{
-			printf("L%d: usage: push integer\n", inputeval);
+			printf("2:L%d: usage: push integer\n", inputeval);
 			exit(EXIT_FAILURE);
 		}
 		(*operation)->argument = atoi(argument);

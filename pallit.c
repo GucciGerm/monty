@@ -1,7 +1,7 @@
 #include "monty.h"
 
 /**
- * pall - Here we wil print all values from the stack starting at the top (:
+ * pallit - Here we wil print all values from the stack starting at the top (:
  * @operation: This is the specific operation we will be printing
  *
  *

@@ -71,12 +71,13 @@ void evaluatein(char *input, stack_t **h, stack_t **t, int *mode,
 	       unsigned int inputeval);
 void whichfunc(operation_t *operation);
 int tokenize(char *input, operation_t **operation);
-void pushnode(operation_t *operation);
+void pushit(operation_t *operation);
 void pallit(operation_t *operation);
-void pint(operation_t *operation);
-void pop(operation_t *operation);
-void swap(operation_t *operation);
-void add(operation_t *operation);
-void nop(operation_t *operation);
+void pintit(operation_t *operation);
+void popit(operation_t *operation);
+void swapit(operation_t *operation);
+void addit(operation_t *operation);
+void nopit(operation_t *operation);
+
 
 #endif

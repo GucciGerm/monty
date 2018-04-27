@@ -29,7 +29,7 @@ void evaluatein(char *input, stack_t **hdll, stack_t **tdll, int *mode,
 
 /**
  * whichfunc - Whichfunc will use an incrementor to move through the operations
- * @operation: is the commands that pass to check if its any of the instructions
+ * @operation: the commands that r pass to check if its any of the instructions
  *
  * Return: Void it (:
  */
@@ -38,13 +38,13 @@ void whichfunc(operation_t *operation)
 {
 	int currentop = 0;
 	instruction_t funcs[] = {
-		{"push", pushnode},
+		{"push", pushit},
 		{"pall", pallit},
-		/*{"pint", pint},
-		{"pop", pop},
-		{"swap", swap},
-		{"add", add},
-		{"nop", nop},*/
+		{"pint", pintit},
+		{"pop", popit},
+		{"swap", swapit},
+		{"add", addit},
+		{"nop", nopit},
 		{NULL, NULL}
 	};
 	while (funcs[currentop].opcode)
