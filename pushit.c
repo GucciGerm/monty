@@ -13,7 +13,6 @@ void pushnode(operation_t *operation)
 {
 	stack_t **h = operation->head;
 	stack_t *newelement = NULL;
-	stack_t *placeholder = NULL;
 
 	if (h == NULL)
 	{
@@ -24,35 +23,15 @@ void pushnode(operation_t *operation)
 
 	if (newelement == NULL)
 		exit(EXIT_FAILURE);
-	if (*operation->mode == 1)
-	{
-		newelement->n = operation->argument;
-		newelement->next = NULL;
-		newelement->prev = NULL;
-
-		if (*h == NULL)
-		{
-			*h = newelement;
-			return;
-		}
-		placeholder = *h;
-
-		while (placeholder->next != NULL)
-			placeholder = placeholder->next;
-		placeholder->next = newelement;
-		newelement->prev = placeholder;
-		return;
-	}
+	newelement->next = NULL;
+	newelement->prev = NULL;
+	newelement->n = operation->argument;
 	if (*h == NULL)
 	{
-		newelement->n = operation->argument;
-		newelement->next = *h;
-		newelement->prev = NULL;
 		*h = newelement;
 		return;
 	}
 	(*h)->prev = newelement;
-	newelement->n = operation->argument;
 	newelement->next = *h;
 	newelement->prev = NULL;
 	*h = newelement;

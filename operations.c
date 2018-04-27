@@ -38,7 +38,7 @@ void whichfunc(operation_t *operation)
 {
 	int currentop = 0;
 	instruction_t funcs[] = {
-		{"push", pushit},
+		{"push", pushnode},
 		{"pall", pallit},
 		{"pint", pintit},
 		{"pop", popit},
