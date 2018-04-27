@@ -44,14 +44,13 @@ void whichfunc(operation_t *operation)
 		{"nop", nopit},
 		{NULL, NULL}
 	};
-	while (!funcs[currentop].opcode)
+	for (; funcs[currentop].opcode; currentop++)
 	{
 		if (strcmp(operation->operation, funcs[currentop].opcode) == 0)
 		{
 			funcs[currentop].f(operation);
 			return;
 		}
-		currentop++;
 	}
 	printf("L%d: unknown instruction %s\n",
 	       operation->line_number, operation->operation);
