@@ -18,9 +18,7 @@ int tokenize(char *input, operation_t *operation)
 	if (input == NULL)
 		return (0);
 	argvpass = strtok(input, deliminators);
-	if (argvpass == NULL)
-		return (0);
-	if (argvpass[0] == '#')
+	if (argvpass == NULL || argvpass[0] == '#')
 		return (0);
 	if (strcmp(argvpass, "stack") == 0)
 	{

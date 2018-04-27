@@ -16,13 +16,16 @@ void pushnode(operation_t *operation)
 
 	if (h == NULL)
 	{
-		printf("L%d: usuage: push integer\n", operation->line_number);
+		printf("L%d: usage: push integer\n", operation->line_number);
 		exit(EXIT_FAILURE);
 	}
 	newelement = malloc(sizeof(stack_t));
 
 	if (newelement == NULL)
+	{
+		printf("Error: malloc failed\n");
 		exit(EXIT_FAILURE);
+	}
 	newelement->next = NULL;
 	newelement->prev = NULL;
 	newelement->n = operation->argument;

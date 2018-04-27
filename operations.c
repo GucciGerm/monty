@@ -44,7 +44,7 @@ void whichfunc(operation_t *operation)
 		{"nop", nopit},
 		{NULL, NULL}
 	};
-	while (funcs[currentop].opcode)
+	while (!funcs[currentop].opcode)
 	{
 		if (strcmp(operation->operation, funcs[currentop].opcode) == 0)
 		{
