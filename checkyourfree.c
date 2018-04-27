@@ -9,13 +9,18 @@
 void freeyourlist(stack_t **head)
 {
 	stack_t *element = NULL;
+	stack_t *placeholder = NULL;
 
-	if (!*head)
-		return;
-	while (*head != NULL)
+	if (*head)
 	{
 		element = *head;
-		*head = (*head)->next;
+		*head = NULL;
+		while (element->next)
+		{
+			placeholder = element;
+			element = element->next;
+			free(placeholder);
+		}
 		free(element);
 	}
 }
