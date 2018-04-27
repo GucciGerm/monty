@@ -1,2 +1,1 @@
-# monty
-This is a repository for the monty program.
+Here at holberton we are learning to deal with Stacks & Queues, lifo & fifo
