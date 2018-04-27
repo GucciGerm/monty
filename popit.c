@@ -12,15 +12,9 @@ void popit(operation_t *operation)
 	stack_t **hdll = operation->head;
 	stack_t *popnode = NULL;
 
-	if (*hdll == NULL)
+	if (hdll == NULL || *hdll == NULL)
 	{
 		printf("L%d: can't pop an empty stack\n",
-		       operation->line_number);
-		exit(EXIT_FAILURE);
-	}
-	if (hdll == NULL)
-	{
-		printf("%d: can't pop an empty stack\n",
 		       operation->line_number);
 		exit(EXIT_FAILURE);
 	}

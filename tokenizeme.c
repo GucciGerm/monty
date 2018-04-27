@@ -8,12 +8,12 @@
  * Return: For 0, Skip the line, 1, Continues to next line
  */
 
-int tokenize(char *input, operation_t **operation)
+int tokenize(char *input, operation_t *operation)
 {
 	char deliminators[] = "\t\r\n ";
 	char *argvpass;
 	char *argument;
-	unsigned int inputeval = (*operation)->line_number;
+	unsigned int inputeval = operation->line_number;
 
 	if (input == NULL)
 		return (0);
@@ -24,12 +24,12 @@ int tokenize(char *input, operation_t **operation)
 		return (0);
 	if (strcmp(argvpass, "stack") == 0)
 	{
-		*(*operation)->mode = 0;
+		*operation->mode = 0;
 		return (0);
 	}
 	if (strcmp(argvpass, "queue") == 0)
 	{
-		*(*operation)->mode = 1;
+		*operation->mode = 1;
 		return (0);
 	}
 	if (strcmp(argvpass, "push") == 0)
@@ -46,10 +46,10 @@ int tokenize(char *input, operation_t **operation)
 			printf("2:L%d: usage: push integer\n", inputeval);
 			exit(EXIT_FAILURE);
 		}
-		(*operation)->argument = atoi(argument);
-		(*operation)->operation = argvpass;
+		operation->argument = atoi(argument);
+		operation->operation = argvpass;
 		return (1);
 	}
-	(*operation)->operation = argvpass;
+	operation->operation = argvpass;
 	return (1);
 }

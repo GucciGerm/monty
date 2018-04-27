@@ -70,7 +70,7 @@ void freeyourlist(stack_t **head);
 void evaluatein(char *input, stack_t **h, stack_t **t, int *mode,
 	       unsigned int inputeval);
 void whichfunc(operation_t *operation);
-int tokenize(char *input, operation_t **operation);
+int tokenize(char *input, operation_t *operation);
 void pushnode(operation_t *operation);
 void pallit(operation_t *operation);
 void pintit(operation_t *operation);

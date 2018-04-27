@@ -14,17 +14,14 @@
 void evaluatein(char *input, stack_t **hdll, stack_t **tdll, int *mode,
 		unsigned int inputeval)
 {
-	operation_t *operation;
+	operation_t operation;
 
-	operation = malloc(sizeof(operation_t));
-	if (operation == NULL)
-		return;
-	operation->mode = mode;
-	operation->line_number = inputeval;
-	operation->head = hdll;
-	operation->tail = tdll;
+	operation.mode = mode;
+	operation.line_number = inputeval;
+	operation.head = hdll;
+	operation.tail = tdll;
 	if (tokenize(input, &operation))
-		whichfunc(operation);
+		whichfunc(&operation);
 }
 
 /**
